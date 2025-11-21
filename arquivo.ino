@@ -6,6 +6,10 @@
 //  CONFIGURAÇÕES DE REDE / MQTT / FIWARE
 // =====================================================================
 
+// Pedro Faleiros - 562523
+// Luan Felix - 565541
+// João Lopes - 565737
+
 // Wi-Fi do Wokwi
 const char* SSID = "Wokwi-GUEST";
 const char* PASSWORD = "";
