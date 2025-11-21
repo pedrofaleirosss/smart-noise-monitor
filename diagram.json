@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "author": "Fabio Henrique Cabrini",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 275.4, "left": -112.4, "attrs": {} },
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 4.7, "left": 4.6, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 88.8,
+      "left": -190.2,
+      "attrs": { "volume": "0.1" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": 217.2, "left": 32.6, "attrs": { "color": "red" } },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -10.9, "left": -125, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 265.6,
+      "left": 226.4,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "bb1:tp.25", "esp:3V3", "red", [ "v0" ] ],
+    [ "bb1:tn.24", "esp:GND.1", "black", [ "v0" ] ],
+    [ "bz1:2", "esp:D27", "red", [ "h47.6", "v76.8", "h115.2" ] ],
+    [ "bz1:1", "bb1:tn.1", "black", [ "v0" ] ],
+    [ "led1:A", "esp:D2", "red", [ "h76.8", "v-104.9" ] ],
+    [ "led1:C", "bb1:tn.12", "black", [ "v0" ] ],
+    [ "pot1:SIG", "esp:D34", "green", [ "v0" ] ],
+    [ "pot1:VCC", "bb1:tp.4", "red", [ "v124.8", "h26.4" ] ],
+    [ "pot1:GND", "bb1:tn.2", "black", [ "v124.8", "h27.2" ] ],
+    [ "lcd1:SCL", "esp:D22", "green", [ "h-9.6", "v-287.4" ] ],
+    [ "lcd1:SDA", "esp:D21", "green", [ "h-48", "v-249" ] ],
+    [ "lcd1:GND", "bb1:tn.20", "black", [ "h0" ] ],
+    [ "lcd1:VCC", "bb1:tp.19", "red", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
