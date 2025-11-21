@@ -152,9 +152,10 @@ As portas públicas devem estar liberadas no Azure (protocolo **TCP**):
 
 - Registrar dispositivo noisemonitor001.
 - Registrar entidade urn:ngsi-ld:Workstation:001.
-- Atributo: noise (Integer).
-- Comandos disponíveis: on, off.
-- A API usada no dashboard:
+  - Atributo: noise (Integer).
+  - Comandos disponíveis: on, off.
+  
+A API usada no dashboard:
 ```http
 GET http://<IP_VM>:8666/STH/v1/contextEntities/type/Workstation/id/urn:ngsi-ld:Workstation:001/attributes/noise?lastN=30
 ```
@@ -206,7 +207,7 @@ http://<IP_VM>:5000
 ```
 smart-noise-monitor/
 │
-├── sketch.ino                               # Código do ESP32
+├── arquivo.ino                               # Código do ESP32
 ├── app.py                                   # Dashboard Flask
 ├── requirements.txt                          # Dependências Python
 ├── FIWARE SmartNoise.postman_collection.json # Testes Postman
